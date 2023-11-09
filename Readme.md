@@ -4,6 +4,15 @@
 
 - Pre-commit Integration: Pre-commit hooks are set up to enforce code quality standards and formatting guidelines.
 
+## Use of asyncio
+The project utilizes asyncio to efficiently send people API requests in parallel, making it possible to hit multiple API endpoints simultaneously. This improves the speed of fetching data from external sources.
+
+## Caching Behavior
+
+- When the Movies List API is accessed for the first time, it may take some time to fetch and process the film data. Subsequent requests within the same minute will return the cached data for improved performance.
+
+- After 1 minute, the project will automatically re-fetch the film data from the Ghibli API to ensure the content is up-to-date.
+
 ## Project Overview
 
 The project has the following main components:
